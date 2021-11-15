@@ -57,11 +57,9 @@ export default {
   created() {
     this.axios.get("http://127.0.0.1:8000/api/get_companies").then((response) => {
       this.companies = response.data;
-      console.log(response.data);
     });
   },
   methods: {
-    this: "",
     addEmployee(e) {
       e.preventDefault();
       this.axios
