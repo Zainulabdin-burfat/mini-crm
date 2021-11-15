@@ -1,11 +1,17 @@
-<p align="center"><a href="https://codeplaners.com/how-to-create-laravel-8-vue-js-crud-example/" target="_blank"><img src="https://codeplaners.com/wp-content/uploads/2021/03/laravel8.jpg" width="400"></a></p>
+Configure .env file
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=93f03068295af0
+MAIL_PASSWORD=73b0bca25f1e00
+MAIL_ENCRYPTION=tls
+
+run commands 
+1. composer update
+2. npm install
+3. npm run dev
+4. npm run watch
 
 ## About Laravel
 
