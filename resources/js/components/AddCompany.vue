@@ -41,7 +41,6 @@ export default {
       this.file = e.target.files[0];
     },
     addCompany(e) {
-
       e.preventDefault();
       let data = new FormData();
       data.append("image", this.file);
@@ -53,7 +52,6 @@ export default {
         .post("http://127.0.0.1:8000/api/company/add", data)
         .then((res) => {
          this.$router.push({ name:"companies" });
-          // console.log(res);
         });
 
     },

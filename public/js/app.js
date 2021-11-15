@@ -2118,8 +2118,7 @@ __webpack_require__.r(__webpack_exports__);
       this.axios.post("http://127.0.0.1:8000/api/company/add", data).then(function (res) {
         _this.$router.push({
           name: "companies"
-        }); // console.log(res);
-
+        });
       });
     }
   }
