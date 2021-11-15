@@ -8,11 +8,14 @@ MAIL_PASSWORD=73b0bca25f1e00
 MAIL_ENCRYPTION=tls
 
 run commands 
-1. composer update
-2. npm install
-3. npm run dev
-4. npm run watch
-5. php artisan storage:link
+1. cp .env.example .env
+2. php artisan key:generate
+3. composer update
+4. composer install
+5. npm install
+6. npm run dev
+7. npm run watch
+8. php artisan storage:link
 
 ## About Laravel
 
