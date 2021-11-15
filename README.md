@@ -12,6 +12,7 @@ run commands
 2. npm install
 3. npm run dev
 4. npm run watch
+5. php artisan storage:link
 
 ## About Laravel
 
