@@ -51,7 +51,6 @@ export default {
   data() {
     return {
       employee: {},
-      company: null,
       companies: {}
     };
   },

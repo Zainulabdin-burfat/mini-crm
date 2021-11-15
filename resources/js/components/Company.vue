@@ -31,16 +31,15 @@
         </tr>
       </tbody>
     </table>
-    <!-- <pagination :data="companies" @pagination-change-page="getResults"></pagination> -->
+
     <nav aria-label="Page navigation example">
-      <ul class="pagination" v-for="link in links" :key="link.label">
-       <div v-if="link.url != null && link.label !='Next &raquo;'">
-        <li class="page-item">
-           <button class="btn" @click="getResults(link.label)">{{link.label}}</button>
-         </li>
+      <ul class="pagination d-flex" v-for="link in links" :key="link.label">
+       <div v-if="link.url != null && link.label !='Next &raquo;' && link.label !='&laquo; Previous'">
+        <li class="page-item"><a class="page-link btn" @click="getResults(link.label)">{{link.label}}</a></li>
        </div>
       </ul>
     </nav>
+
   </div>
 </template>
   
@@ -53,11 +52,6 @@ export default {
     };
   },
   created() {
-    // this.axios.get("http://127.0.0.1:8000/api/companies").then((response) => {
-      // this.companies = response.data.data;
-      // console.log(response.data)
-      // this.links = response.data.links;
-    // });
     this.getResults();
   },
   methods: {
@@ -65,7 +59,7 @@ export default {
       this.axios
         .delete(`http://127.0.0.1:8000/api/company/delete/${id}`)
         .then((response) => {
-          let i = this.companies.map((item) => item.id).indexOf(id); // find index of your object
+          let i = this.companies.map((item) => item.id).indexOf(id);
           this.companies.splice(i, 1);
         });
     },
@@ -74,7 +68,6 @@ export default {
         page = 1;
       }
       this.axios
-        // .get(`http://127.0.0.1:8000/api/companies/${page}`)
         .get(`http://127.0.0.1:8000/api/companies/${page}?page=${page}`)
         .then(response => {
           this.companies = response.data.data;

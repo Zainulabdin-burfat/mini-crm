@@ -2188,7 +2188,6 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       employee: {},
-      company: null,
       companies: {}
     };
   },
@@ -2309,7 +2308,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2318,11 +2316,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    // this.axios.get("http://127.0.0.1:8000/api/companies").then((response) => {
-    // this.companies = response.data.data;
-    // console.log(response.data)
-    // this.links = response.data.links;
-    // });
     this.getResults();
   },
   methods: {
@@ -2332,8 +2325,7 @@ __webpack_require__.r(__webpack_exports__);
       this.axios["delete"]("http://127.0.0.1:8000/api/company/delete/".concat(id)).then(function (response) {
         var i = _this.companies.map(function (item) {
           return item.id;
-        }).indexOf(id); // find index of your object
-
+        }).indexOf(id);
 
         _this.companies.splice(i, 1);
       });
@@ -2345,8 +2337,7 @@ __webpack_require__.r(__webpack_exports__);
         page = 1;
       }
 
-      this.axios // .get(`http://127.0.0.1:8000/api/companies/${page}`)
-      .get("http://127.0.0.1:8000/api/companies/".concat(page, "?page=").concat(page)).then(function (response) {
+      this.axios.get("http://127.0.0.1:8000/api/companies/".concat(page, "?page=").concat(page)).then(function (response) {
         _this2.companies = response.data.data;
         _this2.links = response.data.links;
       });
@@ -39675,14 +39666,16 @@ var render = function () {
       "nav",
       { attrs: { "aria-label": "Page navigation example" } },
       _vm._l(_vm.links, function (link) {
-        return _c("ul", { key: link.label, staticClass: "pagination" }, [
-          link.url != null && link.label != "Next &raquo;"
+        return _c("ul", { key: link.label, staticClass: "pagination d-flex" }, [
+          link.url != null &&
+          link.label != "Next &raquo;" &&
+          link.label != "&laquo; Previous"
             ? _c("div", [
                 _c("li", { staticClass: "page-item" }, [
                   _c(
-                    "button",
+                    "a",
                     {
-                      staticClass: "btn",
+                      staticClass: "page-link btn",
                       on: {
                         click: function ($event) {
                           return _vm.getResults(link.label)
