@@ -42,14 +42,21 @@ class CompanyController extends Controller
                 $request->image->move(storage_path('app/public'),$image_name);
             }
            
-            $Company = Company::create([
+            $company = Company::create([
                 "name"      => $request->name,
                 "email"     => $request->email,
                 "logo"      => $image_name,
                 "website"   => $request->website
             ]);
 
-            Mail::to('panhjicar@gmail.com')->send(new MailtrapExample());
+            // Mail::to('panhjicar@gmail.com')->send(new MailtrapExample());
+            $data = [];
+            $data['company'] = $company;
+
+            Mail::send('email.active', $data, function ($message) {
+                $message->from('panhjicar@gmail.com', 'System');
+                $message->to('panhjicar@gmail.com','Admin');
+            });
             
             DB::commit();
             return Response()->json(["status" => true, "message" => "Company Added Successfully ..!"]);
