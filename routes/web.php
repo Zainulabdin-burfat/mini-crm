@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Mail\MailtrapExample;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/send-mail', function () {
+
+    Mail::to('panhjicar@gmail.com')->send(new MailtrapExample());
+
+    return 'A message has been sent to Mailtrap!';
+
+});
 
 Auth::routes();
 Route::get('{any}', function () {
