@@ -65,7 +65,7 @@ export default {
       e.preventDefault();
       this.axios
         .post("http://127.0.0.1:8000/api/employee/add", this.employee)
-        .then(function (res) {
+        .then((res) => {
           this.$router.push({ name:"employees" });
         });
     },

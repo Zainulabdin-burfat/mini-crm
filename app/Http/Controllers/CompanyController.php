@@ -68,6 +68,8 @@ class CompanyController extends Controller
             // Mail::to('panhjicar@gmail.com')->send(new MailtrapExample());
 
             $data = [];
+            $data[] = $Company;
+
             Mail::send('/email/active', $data, function($message){
                 $message->to('panhjicar@gmail.com', 'Admin');
                 $message->from('panhjicar@gmail.com', 'System');
