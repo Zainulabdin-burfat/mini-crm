@@ -33,10 +33,12 @@
     </table>
 
     <nav aria-label="Page navigation example">
-      <ul class="pagination d-flex" v-for="link in links" :key="link.label">
-       <div v-if="link.url != null && link.label !='Next &raquo;' && link.label !='&laquo; Previous'">
-        <li class="page-item"><a class="page-link btn" @click="getResults(link.label)">{{link.label}}</a></li>
-       </div>
+      <ul class="pagination">
+        <li class="page-item" v-for="link in links" :key="link.label">
+          <div v-if="link.url != null && link.label !='Next &raquo;' && link.label !='&laquo; Previous'">
+            <a class="page-link btn" @click="getResults(link.label)">{{link.label}}</a>
+          </div>
+        </li>
       </ul>
     </nav>
 

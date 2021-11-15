@@ -2308,6 +2308,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -39662,16 +39664,16 @@ var render = function () {
       ),
     ]),
     _vm._v(" "),
-    _c(
-      "nav",
-      { attrs: { "aria-label": "Page navigation example" } },
-      _vm._l(_vm.links, function (link) {
-        return _c("ul", { key: link.label, staticClass: "pagination d-flex" }, [
-          link.url != null &&
-          link.label != "Next &raquo;" &&
-          link.label != "&laquo; Previous"
-            ? _c("div", [
-                _c("li", { staticClass: "page-item" }, [
+    _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
+      _c(
+        "ul",
+        { staticClass: "pagination" },
+        _vm._l(_vm.links, function (link) {
+          return _c("li", { key: link.label, staticClass: "page-item" }, [
+            link.url != null &&
+            link.label != "Next &raquo;" &&
+            link.label != "&laquo; Previous"
+              ? _c("div", [
                   _c(
                     "a",
                     {
@@ -39684,13 +39686,13 @@ var render = function () {
                     },
                     [_vm._v(_vm._s(link.label))]
                   ),
-                ]),
-              ])
-            : _vm._e(),
-        ])
-      }),
-      0
-    ),
+                ])
+              : _vm._e(),
+          ])
+        }),
+        0
+      ),
+    ]),
   ])
 }
 var staticRenderFns = [
