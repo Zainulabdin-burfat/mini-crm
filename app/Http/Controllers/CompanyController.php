@@ -19,6 +19,12 @@ class CompanyController extends Controller
         return response()->json($data);
     }
 
+    public function index2()
+    {
+        $data = Company::all()->toArray();
+        return response()->json($data);
+    }
+
     public function create()
     {
         //

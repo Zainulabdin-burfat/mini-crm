@@ -2194,8 +2194,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://127.0.0.1:8000/api/companies").then(function (response) {
+    this.axios.get("http://127.0.0.1:8000/api/get_companies").then(function (response) {
       _this.companies = response.data;
+      console.log(response.data);
     });
   },
   methods: {

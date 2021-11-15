@@ -29,6 +29,7 @@ Route::group(['prefix' => 'post'], function () {
 
 
 // Company API
+Route::get('get_companies', [CompanyController::class, 'index2']);
 Route::get('companies/{page?}', [CompanyController::class, 'index']);
 Route::group(['prefix' => 'company'], function () {
 	Route::post('add', "CompanyController@add");
