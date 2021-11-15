@@ -15,7 +15,7 @@ class CompanyController extends Controller
   
     public function index($page=null)
     {
-        $data = Company::paginate(10);
+        $data = Company::orderBy("id","DESC")->paginate(10);
         return response()->json($data);
     }
 

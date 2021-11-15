@@ -2106,6 +2106,8 @@ __webpack_require__.r(__webpack_exports__);
       this.file = e.target.files[0];
     },
     addCompany: function addCompany(e) {
+      var _this = this;
+
       e.preventDefault();
       var data = new FormData();
       data.append("image", this.file);
@@ -2113,8 +2115,9 @@ __webpack_require__.r(__webpack_exports__);
       data.append("email", this.company.email);
       data.append("website", this.company.website);
       this.axios.post("http://127.0.0.1:8000/api/company/add", data).then(function (res) {
-        //  this.$router.push({ name:"companies" });
-        console.log(res);
+        _this.$router.push({
+          name: "companies"
+        });
       });
     }
   }

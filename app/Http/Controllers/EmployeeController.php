@@ -20,6 +20,7 @@ class EmployeeController extends Controller
         $companies = DB::table("companies AS C")
                         ->select("E.id","E.first_name","E.last_name","E.email","E.phone","C.name")
                         ->join("employees AS E","E.company_id","C.id")
+                        ->orderBy("C.id","DESC")
                         ->get()
                         ->toArray();
 
