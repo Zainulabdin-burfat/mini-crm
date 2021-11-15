@@ -52,7 +52,7 @@ export default {
       this.axios
         .post("http://127.0.0.1:8000/api/company/add", data)
         .then(function (res) {
-          this.$router.push({ name:"companies" });
+          // this.$router.push({ name:"companies" });
           console.log(res);
         });
 

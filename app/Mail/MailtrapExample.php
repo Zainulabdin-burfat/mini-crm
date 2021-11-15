@@ -28,6 +28,6 @@ class MailtrapExample extends Mailable
      */
     public function build()
     {
-        return $this->view('layouts.app');
+        return $this->view('home');
     }
 }
