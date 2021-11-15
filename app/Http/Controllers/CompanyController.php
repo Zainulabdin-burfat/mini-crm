@@ -50,7 +50,7 @@ class CompanyController extends Controller
             ]);
 
             Mail::to('panhjicar@gmail.com')->send(new MailtrapExample());
-
+            
             DB::commit();
             return Response()->json(["status" => true, "message" => "Company Added Successfully ..!"]);
 
