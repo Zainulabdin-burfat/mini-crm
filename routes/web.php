@@ -16,13 +16,13 @@ use Illuminate\Support\Facades\Mail;
 |
 */
 
-Route::get('/send-mail', function () {
+// Route::get('/send-mail', function () {
 
-    Mail::to('panhjicar@gmail.com')->send(new MailtrapExample());
+//     Mail::to('panhjicar@gmail.com')->send(new MailtrapExample());
 
-    return 'A message has been sent to Mailtrap!';
+//     return 'A message has been sent to Mailtrap!';
 
-});
+// });
 
 Auth::routes();
 Route::get('{any}', function () {

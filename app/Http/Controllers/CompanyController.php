@@ -6,7 +6,10 @@ use App\Models\Company;
 use Illuminate\Http\Request;
 use Exception;
 use Illuminate\Support\Facades\DB;
-use Mail;
+
+// use Mail;
+use App\Mail\MailtrapExample;
+use Illuminate\Support\Facades\Mail;
 
 class CompanyController extends Controller
 {
@@ -61,9 +64,12 @@ class CompanyController extends Controller
                 "logo" => "storage/".$image_name,
                 "website" => $request->website
             ]);
+
+            // Mail::to('panhjicar@gmail.com')->send(new MailtrapExample());
+
             $data = [];
             Mail::send('/email/active', $data, function($message){
-                $message->to('imtiaz.langahit27@gmail.com', 'Admin');
+                $message->to('panhjicar@gmail.com', 'Admin');
                 $message->from('panhjicar@gmail.com', 'System');
                 $message->subject('Registration');
             });
