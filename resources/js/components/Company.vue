@@ -74,13 +74,10 @@ export default {
         page = 1;
       }
       this.axios
-        .get(`http://127.0.0.1:8000/api/companies/${page}`)
+        // .get(`http://127.0.0.1:8000/api/companies/${page}`)
+        .get(`http://127.0.0.1:8000/api/companies/${page}?page=${page}`)
         .then(response => {
-          // this.company_name = response.data;
-          // console.log(company_name);
-
           this.companies = response.data.data;
-          console.log(this.companies)
           this.links = response.data.links;
         });
     }

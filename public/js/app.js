@@ -2094,7 +2094,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2189,6 +2188,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       employee: {},
+      company: null,
       companies: {}
     };
   },
@@ -2345,11 +2345,9 @@ __webpack_require__.r(__webpack_exports__);
         page = 1;
       }
 
-      this.axios.get("http://127.0.0.1:8000/api/companies/".concat(page)).then(function (response) {
-        // this.company_name = response.data;
-        // console.log(company_name);
+      this.axios // .get(`http://127.0.0.1:8000/api/companies/${page}`)
+      .get("http://127.0.0.1:8000/api/companies/".concat(page, "?page=").concat(page)).then(function (response) {
         _this2.companies = response.data.data;
-        console.log(_this2.companies);
         _this2.links = response.data.links;
       });
     }

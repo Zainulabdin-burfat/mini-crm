@@ -24,7 +24,7 @@ class CompanyController extends Controller
         // $data = Company::paginate($page);
         // return $data;
 
-        $data = Company::paginate(2);
+        $data = Company::paginate(1);
         return response()->json($data);
     }
 

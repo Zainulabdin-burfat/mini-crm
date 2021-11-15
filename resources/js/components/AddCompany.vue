@@ -14,7 +14,6 @@
           </div>
           <div class="form-group">
             <label>Logo</label>
-            <!-- <input type="file" class="form-control" v-model="company.logo"> -->
             <input type="file" class="form-control" @change="onChange" />
           </div>
           <div class="form-group">

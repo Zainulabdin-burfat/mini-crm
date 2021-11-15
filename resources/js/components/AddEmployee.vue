@@ -27,7 +27,7 @@
           <label>Select Company</label>
           <div class="form-group" >
             <select class="form-control form-select" v-model="employee.company_id" >
-              <option v-for="company in companies" v-bind:value=company.id > {{ company.name }} </option>
+              <option v-for="company in companies" v-bind:value="company.id" > {{ company.name }} </option>
             </select>
             
           </div>
@@ -51,6 +51,7 @@ export default {
   data() {
     return {
       employee: {},
+      company: null,
       companies: {}
     };
   },
