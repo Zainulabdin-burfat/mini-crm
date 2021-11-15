@@ -2106,8 +2106,6 @@ __webpack_require__.r(__webpack_exports__);
       this.file = e.target.files[0];
     },
     addCompany: function addCompany(e) {
-      var _this = this;
-
       e.preventDefault();
       var data = new FormData();
       data.append("image", this.file);
@@ -2115,9 +2113,8 @@ __webpack_require__.r(__webpack_exports__);
       data.append("email", this.company.email);
       data.append("website", this.company.website);
       this.axios.post("http://127.0.0.1:8000/api/company/add", data).then(function (res) {
-        _this.$router.push({
-          name: "companies"
-        });
+        //  this.$router.push({ name:"companies" });
+        console.log(res);
       });
     }
   }
@@ -2248,6 +2245,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
 
 /***/ }),
@@ -2263,6 +2288,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -39486,91 +39529,100 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "nav",
-        { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
-        [
-          _c("div", { staticClass: "collapse navbar-collapse" }, [
-            _c(
-              "div",
-              { staticClass: "navbar-nav" },
-              [
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row pt-5" }, [
+      _c("div", { staticClass: "col-sm-12" }, [
+        _c(
+          "nav",
+          { staticClass: "navbar navbar-expand-lg navbar-light bg-light" },
+          [
+            _c("div", { staticClass: "collapse navbar-collapse" }, [
+              _c("ul", { staticClass: "navbar-nav mr-auto" }, [
                 _c(
-                  "router-link",
-                  { staticClass: "nav-item nav-link", attrs: { to: "/" } },
-                  [_vm._v("Home")]
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      { staticClass: "nav-link", attrs: { to: "/" } },
+                      [_vm._v("Home")]
+                    ),
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item nav-link",
-                    attrs: { to: "/company/add" },
-                  },
-                  [_vm._v("Add Company")]
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: "/company/add" },
+                      },
+                      [_vm._v("Add Company")]
+                    ),
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item nav-link",
-                    attrs: { to: "/employee/add" },
-                  },
-                  [_vm._v("Add Employee")]
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: "/employee/add" },
+                      },
+                      [_vm._v("Add Employee")]
+                    ),
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item nav-link",
-                    attrs: { to: "/companies" },
-                  },
-                  [_vm._v("All Companies")]
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      { staticClass: "nav-link", attrs: { to: "/companies" } },
+                      [_vm._v("All Companies")]
+                    ),
+                  ],
+                  1
                 ),
                 _vm._v(" "),
                 _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item nav-link",
-                    attrs: { to: "/employees" },
-                  },
-                  [_vm._v("All Employees")]
+                  "li",
+                  { staticClass: "nav-item" },
+                  [
+                    _c(
+                      "router-link",
+                      { staticClass: "nav-link", attrs: { to: "/employees" } },
+                      [_vm._v("All Employees")]
+                    ),
+                  ],
+                  1
                 ),
-              ],
-              1
-            ),
-          ]),
-        ]
-      ),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("router-view"),
-    ],
-    1
-  )
+              ]),
+            ]),
+          ]
+        ),
+      ]),
+    ]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c("div", { staticClass: "row pt-5" }, [
+      _c("div", { staticClass: "col-sm-12" }, [_c("router-view")], 1),
+    ]),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "text-center",
-        staticStyle: { margin: "20px 0px 20px 0px" },
-      },
-      [_c("span", { staticClass: "text-secondary" }, [_vm._v("CRM - CRUD")])]
-    )
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -39652,7 +39704,7 @@ var render = function () {
                         },
                       },
                     },
-                    [_vm._v("Delete")]
+                    [_vm._v("\n              Delete\n            ")]
                   ),
                 ],
                 1

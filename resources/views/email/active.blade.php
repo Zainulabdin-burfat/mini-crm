@@ -14,14 +14,7 @@
         <td>Website</td>
       </tr>
       <tr>
-        <?php print_r($data); ?>
-        <!-- @forelse($data) -->
       </tr>
     </table>
   </div>
 </div>
-{{-- @extends('layouts.app')
-
-
-@section('body')	
-@endsection --}}
