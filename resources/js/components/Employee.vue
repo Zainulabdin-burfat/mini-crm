@@ -30,7 +30,10 @@
                 class="btn btn-primary"
                 >Edit
               </router-link>
-              <button class="btn btn-danger" @click="deleteEmployee(employee.id)">
+              <button
+                class="btn btn-danger"
+                @click="deleteEmployee(employee.id)"
+              >
                 Delete
               </button>
             </div>
@@ -59,11 +62,10 @@ export default {
       this.axios
         .delete(`http://127.0.0.1:8000/api/employee/delete/${id}`)
         .then((response) => {
-        let i = this.employees.map((item) => item.id).indexOf(id); // find index of your object
-        this.employees.splice(i, 1);
-        this.$router.push({ name:"employees" });
-
-    });
+          let i = this.employees.map((item) => item.id).indexOf(id); // find index of your object
+          this.employees.splice(i, 1);
+          this.$router.push({ name: "employees" });
+        });
     },
   },
 };

@@ -1,9 +1,7 @@
 <template>
   <div class="container">
-    
     <div class="row pt-5">
       <div class="col-sm-12">
-
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
@@ -33,7 +31,6 @@
             </ul>
           </div>
         </nav>
-
       </div>
     </div>
 
@@ -44,7 +41,6 @@
         <router-view></router-view>
       </div>
     </div>
-    
   </div>
 </template>
   

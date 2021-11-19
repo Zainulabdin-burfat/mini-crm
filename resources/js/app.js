@@ -1,26 +1,28 @@
-require('./bootstrap');
-import Vue from 'vue';
-window.Vue = require('vue');
+require("./bootstrap");
+import Vue from "vue";
+window.Vue = require("vue");
 
-
-import App from './components/App.vue';
-import VueRouter from 'vue-router';
-import VueAxios from 'vue-axios';
-import axios from 'axios';
-import {routes} from './routes';
+import App from "./components/App.vue";
+import VueRouter from "vue-router";
+import VueAxios from "vue-axios";
+import axios from "axios";
+import { routes } from "./routes";
 
 Vue.use(VueRouter);
 Vue.use(VueAxios, axios);
-Vue.component('file-upload-component', require('./components/AddCompany.vue').default);
-Vue.component('pagination', require('laravel-vue-pagination'));
+Vue.component(
+    "file-upload-component",
+    require("./components/AddCompany.vue").default
+);
+Vue.component("pagination", require("laravel-vue-pagination"));
 
 const router = new VueRouter({
-    mode: 'history',
-    routes: routes
+    mode: "history",
+    routes: routes,
 });
-  
+
 const app = new Vue({
-    el: '#app',
+    el: "#app",
     router: router,
-    render: h => h(App),
+    render: (h) => h(App),
 });

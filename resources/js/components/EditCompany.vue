@@ -24,28 +24,31 @@
 </template>
   
 <script>
-    export default {
-        data() {
-            return {
-                company: {}
-            }
-        },
-        created() {
-            this.axios
-                .get(`http://127.0.0.1:8000/api/company/edit/${this.$route.params.id}`)
-                .then((response) => {
-                    this.company = response.data;
-                    // console.log(response.data);
-                });
-        },
-        methods: {
-            updateCompany() {
-                this.axios
-                    .post(`http://127.0.0.1:8000/api/company/update/${this.$route.params.id}`, this.company)
-                    .then((response) => {
-                        this.$router.push({name: 'companies'});
-                    });
-            }
-        }
-    }
+export default {
+  data() {
+    return {
+      company: {},
+    };
+  },
+  created() {
+    this.axios
+      .get(`http://127.0.0.1:8000/api/company/edit/${this.$route.params.id}`)
+      .then((response) => {
+        this.company = response.data;
+        // console.log(response.data);
+      });
+  },
+  methods: {
+    updateCompany() {
+      this.axios
+        .post(
+          `http://127.0.0.1:8000/api/company/update/${this.$route.params.id}`,
+          this.company
+        )
+        .then((response) => {
+          this.$router.push({ name: "companies" });
+        });
+    },
+  },
+};
 </script>

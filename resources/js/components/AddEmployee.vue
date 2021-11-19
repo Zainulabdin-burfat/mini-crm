@@ -25,11 +25,15 @@
             <input type="email" class="form-control" v-model="employee.email" />
           </div>
           <label>Select Company</label>
-          <div class="form-group" >
-            <select class="form-control form-select" v-model="employee.company_id" >
-              <option v-for="company in companies" v-bind:value="company.id" > {{ company.name }} </option>
+          <div class="form-group">
+            <select
+              class="form-control form-select"
+              v-model="employee.company_id"
+            >
+              <option v-for="company in companies" v-bind:value="company.id">
+                {{ company.name }}
+              </option>
             </select>
-            
           </div>
           <div class="form-group">
             <label>Phone Number</label>
@@ -51,13 +55,15 @@ export default {
   data() {
     return {
       employee: {},
-      companies: {}
+      companies: {},
     };
   },
   created() {
-    this.axios.get("http://127.0.0.1:8000/api/get_companies").then((response) => {
-      this.companies = response.data;
-    });
+    this.axios
+      .get("http://127.0.0.1:8000/api/get_companies")
+      .then((response) => {
+        this.companies = response.data;
+      });
   },
   methods: {
     addEmployee(e) {
@@ -65,7 +71,7 @@ export default {
       this.axios
         .post("http://127.0.0.1:8000/api/employee/add", this.employee)
         .then((res) => {
-          this.$router.push({ name:"employees" });
+          this.$router.push({ name: "employees" });
         });
     },
   },
